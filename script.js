@@ -38,13 +38,13 @@ if(diff == "easy"){
 
 console.log("level 1: Het kasteel is overgenomen door de draak zijn handlangers. Neem het kasteel terug.");
 multiplier = diffCal();
-answer = prompt("Bereken 12 - 3 x " + multiplier);
-if(answer == 12 - 3 * multiplier){
+answer = prompt("Bereken (12 - 3) x " + multiplier);
+if(answer == (12 - 3) * multiplier){
 	score++;
-	console.log("12 - 3 x " + multiplier + " = " + answer + ": correct!");
+	console.log("(12 - 3) x " + multiplier + " = " + answer + ": correct!");
 }else{
 	health -= diffDamage();
-	console.log("12 - 3 x " + multiplier + " = " + answer + ": fout!");
+	console.log("(12 - 3) x " + multiplier + " = " + answer + ": fout!");
 	if(health < 1){
 		alert("je bent gestorven in het gevecht voor het kasteel.\nAlhoewel jouw verhaal kort was, \nzul je worden herrinderd als een moedig persoon.");
 		location.reload();
@@ -72,17 +72,22 @@ multiplier2 = diffCal();
 answer = prompt("Je vind een kist in het donkere bos. Wil je het openen?");
 if(answer == "ja"){
 	alert("Een group slangen springt uit de kist.");
-	answer = prompt(multiplier + " x " + multiplier2 + " + 55 / 22")
-	if(answer == multiplier * multiplier2 + 55 / 22){
+	answer = prompt("(" + multiplier + " x " + multiplier2 + " + 55) / 22")
+	if(answer == (multiplier * multiplier2 + 55) / 22){
 		score++
-		console.log(multiplier + " x " + multiplier2 + " + 55 / 22 = " + answer + ": correct!");
+		console.log("(" + multiplier + " x " + multiplier2 + " + 55) / 22 = " + answer + ": correct!");
 		alert("De kist heeft een damage multiplier voor de draak in zich!");
 		damageMulti++;
 	}else{
 		health -= diffDamage();
-		console.log(multiplier + " x " + multiplier2 + " + 55 / 22 = " + answer + ": fout!");
+		console.log("(" + multiplier + " x " + multiplier2 + " + 55) / 22 = " + answer + ": fout!");
 		if(health < 1){
 			alert("De slangen waren teveel voor je.\nJe bent gestorven aan hun gif.")
+			location.reload();
 		}
 	}
+}else{
+	alert("Je laat de kist achter en gaat verder op jouw avontuur");
 }
+
+
