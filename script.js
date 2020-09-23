@@ -1,5 +1,6 @@
 score = 0;
 health = 10;
+damageMulti = 1;
 
 function diffCal(){
 	if(diff == "easy"){
@@ -62,5 +63,26 @@ if(answer > 33 * multiplier){
 	if(health < 1){
 		alert("De trollen hebben je over hun kampvuur gehangen.\nJe zal herrinderd worden als een grote hulp,\nbij het herovernemen van het kasteel");
 		location.reload();
+	}
+}
+
+console.log("Het bos is lang en dichtbevolkt. Het overgrote aantal bomen blokkeren het meeste zonlicht dat het bos in wilt komen.");
+multiplier = diffCal();
+multiplier2 = diffCal();
+answer = prompt("Je vind een kist in het donkere bos. Wil je het openen?");
+if(answer == "ja"){
+	alert("Een group slangen springt uit de kist.");
+	answer = prompt(multiplier + " x " + multiplier2 + " + 55 / 22")
+	if(answer == multiplier * multiplier2 + 55 / 22){
+		score++
+		console.log(multiplier + " x " + multiplier2 + " + 55 / 22 = " + answer + ": correct!");
+		alert("De kist heeft een damage multiplier voor de draak in zich!");
+		damageMulti++;
+	}else{
+		health -= diffDamage();
+		console.log(multiplier + " x " + multiplier2 + " + 55 / 22 = " + answer + ": fout!");
+		if(health < 1){
+			alert("De slangen waren teveel voor je.\nJe bent gestorven aan hun gif.")
+		}
 	}
 }
