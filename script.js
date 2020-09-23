@@ -17,7 +17,7 @@ function diffDamage(){
 	}else if(diff == "medium"){
 		return 5;
 	}else if(diff == "hard"){
-		return 10;
+		return health;
 	}
 }
 
@@ -33,6 +33,7 @@ if(diff == "easy"){
 
 }else{
 	alert("Dit is geen optie!");
+	location.reload();
 }
 
 console.log("level 1: Het casteel is overgenomen door de draak zijn handlangers. Neem het casteel terug.");
@@ -43,5 +44,11 @@ if(answer == 12 - 3 * multiplier){
 	console.log("12 - 3 x " + multiplier + " = " + answer + ": correct!");
 }else{
 	health -= diffDamage();
-	console.log("12 - 3 x " + multiplier + " = " + answer + ": fout!")
+	console.log("12 - 3 x " + multiplier + " = " + answer + ": fout!");
+	if(health < 1){
+		alert("je bent gestorven in het gevecht voor het casteel.\nAlhoewel jouw verhaal kort was, \nzul je worden herrinderd als een held.");
+		location.reload();
+	}
 }
+
+console.log
