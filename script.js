@@ -30,13 +30,12 @@ if(diff == "easy"){
 	console.log("moeilijkheid :" + diff);
 }else if(diff == "hard"){
 	console.log("moeilijkheid :" + diff);
-
 }else{
 	alert("Dit is geen optie!");
 	location.reload();
 }
 
-console.log("level 1: Het casteel is overgenomen door de draak zijn handlangers. Neem het casteel terug.");
+console.log("level 1: Het kasteel is overgenomen door de draak zijn handlangers. Neem het kasteel terug.");
 multiplier = diffCal();
 answer = prompt("Bereken 12 - 3 x " + multiplier);
 if(answer == 12 - 3 * multiplier){
@@ -46,9 +45,22 @@ if(answer == 12 - 3 * multiplier){
 	health -= diffDamage();
 	console.log("12 - 3 x " + multiplier + " = " + answer + ": fout!");
 	if(health < 1){
-		alert("je bent gestorven in het gevecht voor het casteel.\nAlhoewel jouw verhaal kort was, \nzul je worden herrinderd als een held.");
+		alert("je bent gestorven in het gevecht voor het kasteel.\nAlhoewel jouw verhaal kort was, \nzul je worden herrinderd als een moedig persoon.");
 		location.reload();
 	}
 }
 
-console.log
+console.log("level 2: Door het mysterische bos, opweg naar de draak zijn hoge toren, kom je trollen tegen. De trollen willen je opeten.");
+multiplier = diffCal();
+answer = prompt("noem een cijfer hoger dan 33 x " + multiplier);
+if(answer > 33 * multiplier){
+	score++;
+	console.log("33 * " + multiplier + " = " + answer + ": correct!");
+}else{
+	health -= diffDamage();
+	console.log("33 * " + multiplier + " = " + answer + ": fout!");
+	if(health < 1){
+		alert("De trollen hebben je over hun kampvuur gehangen.\nJe zal herrinderd worden als een grote hulp,\nbij het herovernemen van het kasteel");
+		location.reload();
+	}
+}
