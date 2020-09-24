@@ -26,11 +26,11 @@ alert("De princess is meegenomen door de draak! \nHaal haar terug... Met rekenen
 diff = prompt("Kies een moeilijkheidslevel (easy/medium/hard)");
 
 if(diff == "easy"){
-	console.log("moeilijkheid :" + diff);
+	console.log("moeilijkheid: " + diff);
 }else if(diff == "medium"){
-	console.log("moeilijkheid :" + diff);
+	console.log("moeilijkheid: " + diff);
 }else if(diff == "hard"){
-	console.log("moeilijkheid :" + diff);
+	console.log("moeilijkheid: " + diff);
 }else{
 	alert("Dit is geen optie!");
 	location.reload();
@@ -72,22 +72,60 @@ multiplier2 = diffCal();
 answer = prompt("Je vind een kist in het donkere bos. Wil je het openen?");
 if(answer == "ja"){
 	alert("Een group slangen springt uit de kist.");
-	answer = prompt("(" + multiplier + " x " + multiplier2 + " + 55) / 22")
-	if(answer == (multiplier * multiplier2 + 55) / 22){
-		score++
-		console.log("(" + multiplier + " x " + multiplier2 + " + 55) / 22 = " + answer + ": correct!");
-		alert("De kist heeft een damage multiplier voor de draak in zich!");
-		damageMulti++;
-	}else{
-		health -= diffDamage();
-		console.log("(" + multiplier + " x " + multiplier2 + " + 55) / 22 = " + answer + ": fout!");
-		if(health < 1){
-			alert("De slangen waren teveel voor je.\nJe bent gestorven aan hun gif.")
-			location.reload();
+	if(diff == "hard"){
+		answer = prompt("(" + multiplier + " x " + multiplier2 + " + 55) / 22")
+		if(answer == (multiplier * multiplier2 + 55) / 22){
+			score++;
+			console.log("(" + multiplier + " x " + multiplier2 + " + 55) / 22 = " + answer + ": correct!");
+			alert("De kist heeft een damage multiplier voor de draak in zich!");
+			damageMulti++;
+		}else{
+			health -= diffDamage();
+			console.log("(" + multiplier + " x " + multiplier2 + " + 55) / 22 = " + answer + ": fout!");
 		}
+	}else{
+		answer = prompt(multiplier + " + 20 / " + multiplier);
+		if(answer == multiplier + 20 / multiplier){
+			score++;
+			console.log(multiplier + " + 20 / " + multiplier + " = " + answer + ": correct!");
+			alert("De kist heeft een health potion in zich!");
+			health += 2;
+		}else{
+			health -= diffDamage();
+			console.log(multiplier + " + 20 / " + multiplier + " = " + answer + ": fout!");
+		}
+	}
+	if(health < 1){
+		alert("De slangen waren teveel voor je.\nJe bent gestorven aan hun gif.")
+		location.reload();
 	}
 }else{
 	alert("Je laat de kist achter en gaat verder op jouw avontuur");
 }
 
-
+console.log("level 3: Als je het bos verlaat kom je uit op een groot gebergte. Het is een eenzame plaats, met weinig leven. Met de exceptie voor een grote trol. Hij ziet je en komt achter je aan.")
+multiplier = diffCal();
+multiplier2 = diffCal();
+if(diff == "hard"){
+	answer = prompt(multiplier + "^2 + (37 x " + multiplier2 + ")");
+	if(answer == Math.pow(multiplier, 2) + (37 * multiplier2)){
+		score++;
+		console.log(multiplier + "^2 + (37 x " + multiplier2 + ") = " + answer + ": correct!");
+	}else{
+		health -= diffDamage();
+		console.log(multiplier + "^2 + (37 x " + multiplier2 + ") = " + answer + ": fout");
+	}
+}else{
+	answer = prompt("5 x 2 x " + multiplier + " / 7");
+	if(answer == 5 x 2 x multiplier / 7){
+		score++;
+		console.log("5 x 2 x " + multiplier + " / 7 = " + answer + ": correct!");
+	}else{
+		health -= diffDamage();
+		console.log("5 x 2 x " + multiplier + " / 7 = " + answer + ": fout!");
+	}
+}
+if(health < 1){
+	alert("Je bent gestorven door de grote trol'.\nJe hebt het verder gemaakt dan de meeste");
+	location.reload();
+}
