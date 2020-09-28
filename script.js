@@ -123,7 +123,7 @@ if(diff == "hard"){
 	}
 }else{
 	answer = prompt("5 x 2 x " + multiplier + " / 5");
-	if(answer == 5 x 2 x multiplier / 5){
+	if(answer == 5 * 2 * multiplier / 5){
 		score++;
 		console.log("5 x 2 x " + multiplier + " / 5 = " + answer + ": correct!");
 	}else{
@@ -167,4 +167,3 @@ if(health < 1){
 }
 
 console.log("Je gebruikt je zwaard en steekt het in de trol. Het valt op de grond en is nu vrij zwak.")
-
