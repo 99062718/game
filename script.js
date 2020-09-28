@@ -116,13 +116,13 @@ if(diff == "hard"){
 		console.log(multiplier + "^2 + (37 x " + multiplier2 + ") = " + answer + ": fout");
 	}
 }else{
-	answer = prompt("5 x 2 x " + multiplier + " / 7");
-	if(answer == 5 x 2 x multiplier / 7){
+	answer = prompt("5 x 2 x " + multiplier + " / 5");
+	if(answer == 5 x 2 x multiplier / 5){
 		score++;
-		console.log("5 x 2 x " + multiplier + " / 7 = " + answer + ": correct!");
+		console.log("5 x 2 x " + multiplier + " / 5 = " + answer + ": correct!");
 	}else{
 		health -= diffDamage();
-		console.log("5 x 2 x " + multiplier + " / 7 = " + answer + ": fout!");
+		console.log("5 x 2 x " + multiplier + " / 5 = " + answer + ": fout!");
 	}
 }
 if(health < 1){
@@ -134,6 +134,16 @@ console.log("De trol slaat zijn grote knuppel om zich heen.");
 multiplier= diffCal();
 multiplier2 = diffCal() * 351;
 if(diff == "hard"){
-	answer == prompt(multiplier + " * 7 * " + multiplier2);
-	
+	answer == prompt(multiplier + " x 7 x " + multiplier2);
+	if(answer == multiplier * 7 * multiplier2){
+		score++;
+		console.log(multiplier + " x 7 x " + multiplier2 + " = " + answer + ": correct!");
+	}else{
+		health -= diffDamage();
+		console.log(multiplier + " x 7 x " + multiplier2 + " = " + answer + ": fout!");
+	}	
+}
+if(health < 1){
+	alert("Je bent gestorven door de grote trol.\nJe hebt het verder gemaakt dan de meeste");
+	location.reload();
 }
