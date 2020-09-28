@@ -45,6 +45,7 @@ if(answer == (12 - 3) * multiplier){
 }else{
 	health -= diffDamage();
 	console.log("(12 - 3) x " + multiplier + " = " + answer + ": fout!");
+	console.log(health + "/10");
 	if(health < 1){
 		alert("je bent gestorven in het gevecht voor het kasteel.\nAlhoewel jouw verhaal kort was, \nzul je worden herrinderd als een moedig persoon.");
 		location.reload();
@@ -60,6 +61,7 @@ if(answer > 33 * multiplier){
 }else{
 	health -= diffDamage();
 	console.log("33 * " + multiplier + " = " + answer + ": fout!");
+	console.log(health + "/10");
 	if(health < 1){
 		alert("De trollen hebben je over hun kampvuur gehangen.\nJe zal herrinderd worden als een grote hulp,\nbij het herovernemen van het kasteel");
 		location.reload();
@@ -82,6 +84,7 @@ if(answer == "ja"){
 		}else{
 			health -= diffDamage();
 			console.log("(" + multiplier + " x " + multiplier2 + " + 55) / 22 = " + answer + ": fout!");
+			console.log(health + "/10");
 		}
 	}else{
 		answer = prompt(multiplier + " + 20 / " + multiplier);
@@ -90,9 +93,11 @@ if(answer == "ja"){
 			console.log(multiplier + " + 20 / " + multiplier + " = " + answer + ": correct!");
 			alert("De kist heeft een health potion in zich!");
 			health += 2;
+			console.log(health + "/10");
 		}else{
 			health -= diffDamage();
 			console.log(multiplier + " + 20 / " + multiplier + " = " + answer + ": fout!");
+			console.log(health + "/10");
 		}
 	}
 	if(health < 1){
@@ -114,6 +119,7 @@ if(diff == "hard"){
 	}else{
 		health -= diffDamage();
 		console.log(multiplier + "^2 + (37 x " + multiplier2 + ") = " + answer + ": fout");
+		console.log(health + "/10");
 	}
 }else{
 	answer = prompt("5 x 2 x " + multiplier + " / 5");
@@ -123,6 +129,7 @@ if(diff == "hard"){
 	}else{
 		health -= diffDamage();
 		console.log("5 x 2 x " + multiplier + " / 5 = " + answer + ": fout!");
+		console.log(health + "/10");
 	}
 }
 if(health < 1){
@@ -141,9 +148,23 @@ if(diff == "hard"){
 	}else{
 		health -= diffDamage();
 		console.log(multiplier + " x 7 x " + multiplier2 + " = " + answer + ": fout!");
+		console.log(health + "/10");
 	}	
+}else{
+	answer = prompt(multiplier + " x 7 x 34");
+	if(answer == multiplier * 7 * 34){
+		score++;
+		console.log(multiplier + " x 7 x 34 = " + answer + ": correct!");
+	}else{
+		health -= diffDamage();
+		console.log(multiplier + " x 7 x 34 = " + answer + ": fout!");
+		console.log(health + "/10");
+	}
 }
 if(health < 1){
 	alert("Je bent gestorven door de grote trol.\nJe hebt het verder gemaakt dan de meeste");
 	location.reload();
 }
+
+console.log("Je gebruikt je zwaard en steekt het in de trol. Het valt op de grond en is nu vrij zwak.")
+
