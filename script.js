@@ -96,14 +96,14 @@ if(answer == "ja"){
 		}
 	}
 	if(health < 1){
-		alert("De slangen waren teveel voor je.\nJe bent gestorven aan hun gif.")
+		alert("De slangen waren teveel voor je.\nJe bent gestorven aan hun gif.");
 		location.reload();
 	}
 }else{
 	alert("Je laat de kist achter en gaat verder op jouw avontuur");
 }
 
-console.log("level 3: Als je het bos verlaat kom je uit op een groot gebergte. Het is een eenzame plaats, met weinig leven. Met de exceptie voor een grote trol. Hij ziet je en komt achter je aan.")
+console.log("level 3: Als je het bos verlaat kom je uit op een groot gebergte. Het is een eenzame plaats, met weinig leven. Met de exceptie voor een grote trol. Hij ziet je en komt achter je aan.");
 multiplier = diffCal();
 multiplier2 = diffCal();
 if(diff == "hard"){
@@ -126,6 +126,8 @@ if(diff == "hard"){
 	}
 }
 if(health < 1){
-	alert("Je bent gestorven door de grote trol'.\nJe hebt het verder gemaakt dan de meeste");
+	alert("Je bent gestorven door de grote trol.\nJe hebt het verder gemaakt dan de meeste");
 	location.reload();
 }
+
+console.log("De trol slaat zijn grote knuppel om zich heen.");
