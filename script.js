@@ -166,4 +166,12 @@ if(health < 1){
 	location.reload();
 }
 
-console.log("Je gebruikt je zwaard en steekt het in de trol. Het valt op de grond en is nu vrij zwak.")
+console.log("Je gebruikt je zwaard en steekt het in de trol. Het valt op de grond en is nu vrij zwak.");
+answer = prompt("Vermoord je de trol of ga je verder op je avontuur en laat je hem in leven? (vermoord/ga verder)");
+if(answer == "vermoord"){
+	console.log("Je vermoord de trol")
+}else{
+	console.log("Je laat de trol in leven en gaat verder op je avontuur.")
+}
+
+alert("Welkom bij het einde van het spel.\nJouw score is: " + score + "!");
